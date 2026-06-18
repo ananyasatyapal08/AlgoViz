@@ -1,93 +1,66 @@
-# 🚀 AlgoViz - DSA Visualizer & Performance Analyzer
+# 🚀 AlgoViz — DSA Visualizer & Performance Analyzer
 
-AlgoViz is an interactive web application that visualizes sorting algorithms with real-time animations and performance analytics. Built using React, TypeScript, Tailwind CSS, and Recharts, it helps users understand algorithm behavior through visualization and comparison.
+AlgoViz is an interactive web application built to make sorting algorithms easier to understand through animations and real-time analytics. Instead of just reading about algorithms, users can actually see how they work, compare their behavior, and analyze their performance.
+
+Built with **React, TypeScript, Tailwind CSS, and Recharts**, the project combines algorithm visualization with a modern and responsive UI.
 
 ---
 
-## 🌐 Features
+## ✨ Features
 
-### ✅ Sorting Algorithms
-
+### 📌 Sorting Algorithms
 - Bubble Sort
 - Selection Sort
 - Insertion Sort
 - Merge Sort
 - Quick Sort
 
-### 📊 Performance Analytics
+### 📊 Performance Insights
+- Comparison count
+- Swap count
+- Execution time
+- Array size analysis
 
-- Number of Comparisons
-- Number of Swaps
-- Execution Time
-- Array Size Metrics
+### 📈 Algorithm Analysis
+- Complexity comparison chart
+- Best, average and worst case complexities
+- Space complexity
+- Stability analysis
+- In-place property information
 
-### 📈 Complexity Analysis
+### 🎨 Interactive UI
+- Dark mode support
+- Glassmorphism-inspired design
+- Responsive layout
+- Sorting completion animation
+- Adjustable speed and array size
 
-- Complexity Comparison Chart
-- Dynamic Algorithm Information Card
-- Best Case Complexity
-- Average Case Complexity
-- Worst Case Complexity
-- Space Complexity
-- Stability Analysis
-- In-place Property
-
-### 🎨 User Interface
-
-- Dark Mode
-- Responsive Design
-- Glassmorphism UI
-- Hover Animations
-- Sorting Completion Animation
-- Interactive Controls
-
-### ⚡ Extra Features
-
-- Compare Mode
-- Adjustable Array Size
-- Adjustable Speed
-- Reset Functionality
-- Active Bar Highlighting
-- Sorted Bars Animation
+### ⚡ Additional Functionality
+- Compare mode
+- Reset functionality
+- Active bar highlighting
+- Sorted bars animation
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 | Technology | Purpose |
 |------------|----------|
 | React | Frontend Framework |
 | TypeScript | Type Safety |
 | Tailwind CSS | Styling |
-| Recharts | Charts & Analytics |
+| Recharts | Data Visualization |
 | Vite | Build Tool |
 
 ---
 
-# 📂 Project Structure
-
-```bash
+## 📂 Project Structure
+```
 src
 │
 ├── algorithms
-│     bubbleSort.ts
-│     selectionSort.ts
-│     insertionSort.ts
-│     mergeSort.ts
-│     quickSort.ts
-│
 ├── components
-│     Navbar.tsx
-│     Controls.tsx
-│     ArrayBars.tsx
-│     PerformancePanel.tsx
-│     ComplexityChart.tsx
-│     AlgorithmInfo.tsx
-│     ComparisonPanel.tsx
-│     SortingStatus.tsx
-│     AboutSection.tsx
-│     Footer.tsx
-│
 ├── App.tsx
 ├── main.tsx
 └── index.css
@@ -95,10 +68,10 @@ src
 
 ---
 
-# 🧠 Algorithms Implemented
+## 🧠 Algorithms Implemented
 
-| Algorithm | Best | Average | Worst | Stable |
-|------------|------|---------|-------|--------|
+| Algorithm | Best Case | Average Case | Worst Case | Stable |
+|------------|-----------|--------------|------------|--------|
 | Bubble Sort | O(n) | O(n²) | O(n²) | ✅ |
 | Selection Sort | O(n²) | O(n²) | O(n²) | ❌ |
 | Insertion Sort | O(n) | O(n²) | O(n²) | ✅ |
@@ -107,18 +80,12 @@ src
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Getting Started
 
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AlgoViz.git
-```
-
-Move into project directory
-
-```bash
-cd AlgoViz
+git clone https://github.com/ananyasatyapal08/AlgoViz.git
 ```
 
 Install dependencies
@@ -127,7 +94,7 @@ Install dependencies
 npm install
 ```
 
-Start development server
+Run the development server
 
 ```bash
 npm run dev
@@ -135,89 +102,58 @@ npm run dev
 
 ---
 
-# 📈 Current Features
+## 📷 Screenshots
 
-- Real-time Sorting Visualizations
-- Performance Dashboard
-- Complexity Chart
-- Dynamic Algorithm Cards
-- Compare Mode
-- Dark Mode
-- Responsive Layout
-- Glassmorphism UI
+### 🏠 Home Page
+
+![Home](./screenshots/home.png)
+
+### 🔄 Sorting Visualization
+
+![Sorting](./screenshots/sorting.png)
+
+### 📊 Performance Dashboard
+
+![Dashboard](./screenshots/dashboard.png)
+
+### 📈 Complexity Chart
+
+![Chart](./screenshots/chart.png)
+
+### 🧠 Algorithm Analysis
+
+![Analysis](./screenshots/analysis.png)
+
+### 🌙 Dark Mode
+
+![Dark Mode](./screenshots/darkmode.png)
+
+### ⚡ Compare Mode
+
+![Compare](./screenshots/compare.png)
 
 ---
 
-# 🚀 Future Scope
+## 🚀 Future Improvements
 
-- Heap Sort
-- Searching Algorithms Visualizer
+- Heap Sort Visualization
+- Searching Algorithms
 - Binary Tree Visualizer
 - Graph Algorithms Visualizer
-- Pathfinding Visualizer
+- Pathfinding Algorithms
 - Framer Motion Animations
-- Sound Effects
 
 ---
 
-# 💡 Concepts Used
+## 💭 What I Learned
 
-- React Hooks
-- State Management
-- Props
-- Component Reusability
-- TypeScript Interfaces
-- Conditional Rendering
-- Responsive Design
-- Algorithm Analysis
-- Data Visualization
+While building AlgoViz, I explored:
 
----
+- React hooks and state management
+- TypeScript interfaces and props
+- Component-based architecture
+- Data visualization using Recharts
+- Responsive UI design with Tailwind CSS
+- Algorithm analysis and complexity comparison
 
-# 📷 Screenshots
-
-(Add screenshots after deployment)
-
-Home Page
-
-Sorting Visualization
-
-Complexity Chart
-
-Algorithm Analysis
-
-Compare Mode
-
-Dark Mode
-
----
-
-# ⭐ Project Highlights
-
-✔ Interactive DSA Visualizer
-
-✔ Performance Analyzer Dashboard
-
-✔ Complexity Comparison Charts
-
-✔ Glassmorphism UI
-
-✔ Responsive Design
-
-✔ Built using React + TypeScript + Tailwind CSS
-
----
-
-# 👩‍💻 Author
-
-**Ananya Satyapal**
-
-B.Tech ECE-AI, IGDTUW
-
-GitHub: https://github.com/YOUR_USERNAME
-
-LinkedIn: Add after deployment
-
----
-
-## ⭐ If you like this project, consider giving it a star!
+⭐ If you found this project interesting, consider giving it a star!
