@@ -8,6 +8,9 @@ interface Props {
   setSpeed: React.Dispatch<React.SetStateAction<number>>;
   startSorting: () => void;
   isSorting: boolean;
+
+  algorithm: string;
+  setAlgorithm: React.Dispatch<React.SetStateAction<string>>;
 }
 
 function Controls({
@@ -18,21 +21,23 @@ function Controls({
   setSpeed,
   startSorting,
   isSorting,
+  algorithm,
+  setAlgorithm,
 }: Props) {
   return (
     <div className="flex flex-wrap justify-center gap-6 mt-6">
 
-      {/* Algorithm Dropdown */}
       <select
         className="bg-slate-800 p-3 rounded-lg"
+        value={algorithm}
         disabled={isSorting}
+        onChange={(e) => setAlgorithm(e.target.value)}
       >
         <option>Bubble Sort</option>
         <option>Selection Sort</option>
         <option>Insertion Sort</option>
       </select>
 
-      {/* Array Size Slider */}
       <div>
         <p className="mb-2">Array Size : {size}</p>
 
@@ -46,7 +51,6 @@ function Controls({
         />
       </div>
 
-      {/* Speed Slider */}
       <div>
         <p className="mb-2">Speed : {speed} ms</p>
 
@@ -60,7 +64,6 @@ function Controls({
         />
       </div>
 
-      {/* Generate Array */}
       <button
         className="bg-cyan-500 px-5 py-3 rounded-lg hover:bg-cyan-600 disabled:bg-gray-600"
         onClick={generateArray}
@@ -69,7 +72,6 @@ function Controls({
         Generate Array
       </button>
 
-      {/* Start Sorting */}
       <button
         className="bg-green-500 px-5 py-3 rounded-lg hover:bg-green-600 disabled:bg-gray-600"
         onClick={startSorting}
@@ -77,7 +79,6 @@ function Controls({
       >
         Start Sorting
       </button>
-
     </div>
   );
 }

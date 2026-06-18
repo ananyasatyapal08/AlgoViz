@@ -3,34 +3,47 @@ export async function bubbleSort(
   setArray: React.Dispatch<React.SetStateAction<number[]>>,
   setComparisons: React.Dispatch<React.SetStateAction<number>>,
   setSwaps: React.Dispatch<React.SetStateAction<number>>,
+  setActiveIndices: React.Dispatch<React.SetStateAction<number[]>>,
   speed: number
 ) {
-
-  let temp = [...arr];
+  const temp = [...arr];
 
   let comparisons = 0;
   let swaps = 0;
 
-  for(let i=0;i<temp.length-1;i++){
+  for (let i = 0; i < temp.length - 1; i++) {
+    for (let j = 0; j < temp.length - i - 1; j++) {
 
-    for(let j=0;j<temp.length-i-1;j++){
+      // Highlight current bars
+      setActiveIndices([j, j + 1]);
 
       comparisons++;
       setComparisons(comparisons);
 
-      if(temp[j]>temp[j+1]){
+      // Delay so comparison can be visualized
+      await new Promise((resolve) =>
+        setTimeout(resolve, speed)
+      );
+
+      if (temp[j] > temp[j + 1]) {
 
         swaps++;
         setSwaps(swaps);
 
-        [temp[j],temp[j+1]]=[temp[j+1],temp[j]];
+        // Swap elements
+        [temp[j], temp[j + 1]] = [temp[j + 1], temp[j]];
 
+        // Update array for rendering
         setArray([...temp]);
 
-        await new Promise(resolve=>
-          setTimeout(resolve,speed)
+        // Delay after swap
+        await new Promise((resolve) =>
+          setTimeout(resolve, speed)
         );
       }
     }
   }
+
+  // Remove highlighting after sorting finishes
+  setActiveIndices([]);
 }
