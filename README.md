@@ -1,6 +1,11 @@
 # 🚀 AlgoViz — DSA Visualizer & Performance Analyzer
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38BDF8?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Recharts](https://img.shields.io/badge/Recharts-FF4D4D?style=for-the-badge)
 
-AlgoViz is an interactive web application built to make sorting algorithms easier to understand through animations and real-time analytics. Instead of just reading about algorithms, users can actually see how they work, compare their behavior, and analyze their performance.
+AlgoViz is an interactive web application built to make sorting algorithms easier to understand through anismations and real-time analytics. Instead of just reading about algorithms, users can actually see how they work, compare their behavior, and analyze their performance.
 
 Built with **React, TypeScript, Tailwind CSS, and Recharts**, the project combines algorithm visualization with a modern and responsive UI.
 
