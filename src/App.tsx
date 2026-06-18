@@ -4,6 +4,7 @@ import Controls from "./components/Controls";
 import ArrayBars from "./components/ArrayBars";
 import PerformancePanel from "./components/PerformancePanel";
 import ComparisonPanel from "./components/ComparisonPanel";
+import ComplexityChart from "./components/ComplexityChart";
 
 import { bubbleSort } from "./algorithms/bubbleSort";
 import { selectionSort } from "./algorithms/selectionSort";
@@ -176,6 +177,9 @@ function App() {
               timeTaken={timeTaken}
               arraySize={size}
             />
+
+            <ComplexityChart />
+
           </>
 
         )
