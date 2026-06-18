@@ -1,73 +1,223 @@
-# React + TypeScript + Vite
+# 🚀 AlgoViz - DSA Visualizer & Performance Analyzer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AlgoViz is an interactive web application that visualizes sorting algorithms with real-time animations and performance analytics. Built using React, TypeScript, Tailwind CSS, and Recharts, it helps users understand algorithm behavior through visualization and comparison.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🌐 Features
 
-## React Compiler
+### ✅ Sorting Algorithms
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Bubble Sort
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
 
-## Expanding the ESLint configuration
+### 📊 Performance Analytics
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Number of Comparisons
+- Number of Swaps
+- Execution Time
+- Array Size Metrics
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 📈 Complexity Analysis
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Complexity Comparison Chart
+- Dynamic Algorithm Information Card
+- Best Case Complexity
+- Average Case Complexity
+- Worst Case Complexity
+- Space Complexity
+- Stability Analysis
+- In-place Property
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🎨 User Interface
+
+- Dark Mode
+- Responsive Design
+- Glassmorphism UI
+- Hover Animations
+- Sorting Completion Animation
+- Interactive Controls
+
+### ⚡ Extra Features
+
+- Compare Mode
+- Adjustable Array Size
+- Adjustable Speed
+- Reset Functionality
+- Active Bar Highlighting
+- Sorted Bars Animation
+
+---
+
+# 🛠 Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| React | Frontend Framework |
+| TypeScript | Type Safety |
+| Tailwind CSS | Styling |
+| Recharts | Charts & Analytics |
+| Vite | Build Tool |
+
+---
+
+# 📂 Project Structure
+
+```bash
+src
+│
+├── algorithms
+│     bubbleSort.ts
+│     selectionSort.ts
+│     insertionSort.ts
+│     mergeSort.ts
+│     quickSort.ts
+│
+├── components
+│     Navbar.tsx
+│     Controls.tsx
+│     ArrayBars.tsx
+│     PerformancePanel.tsx
+│     ComplexityChart.tsx
+│     AlgorithmInfo.tsx
+│     ComparisonPanel.tsx
+│     SortingStatus.tsx
+│     AboutSection.tsx
+│     Footer.tsx
+│
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 🧠 Algorithms Implemented
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Algorithm | Best | Average | Worst | Stable |
+|------------|------|---------|-------|--------|
+| Bubble Sort | O(n) | O(n²) | O(n²) | ✅ |
+| Selection Sort | O(n²) | O(n²) | O(n²) | ❌ |
+| Insertion Sort | O(n) | O(n²) | O(n²) | ✅ |
+| Merge Sort | O(n log n) | O(n log n) | O(n log n) | ✅ |
+| Quick Sort | O(n log n) | O(n log n) | O(n²) | ❌ |
+
+---
+
+# ⚙️ Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/AlgoViz.git
 ```
+
+Move into project directory
+
+```bash
+cd AlgoViz
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Start development server
+
+```bash
+npm run dev
+```
+
+---
+
+# 📈 Current Features
+
+- Real-time Sorting Visualizations
+- Performance Dashboard
+- Complexity Chart
+- Dynamic Algorithm Cards
+- Compare Mode
+- Dark Mode
+- Responsive Layout
+- Glassmorphism UI
+
+---
+
+# 🚀 Future Scope
+
+- Heap Sort
+- Searching Algorithms Visualizer
+- Binary Tree Visualizer
+- Graph Algorithms Visualizer
+- Pathfinding Visualizer
+- Framer Motion Animations
+- Sound Effects
+
+---
+
+# 💡 Concepts Used
+
+- React Hooks
+- State Management
+- Props
+- Component Reusability
+- TypeScript Interfaces
+- Conditional Rendering
+- Responsive Design
+- Algorithm Analysis
+- Data Visualization
+
+---
+
+# 📷 Screenshots
+
+(Add screenshots after deployment)
+
+Home Page
+
+Sorting Visualization
+
+Complexity Chart
+
+Algorithm Analysis
+
+Compare Mode
+
+Dark Mode
+
+---
+
+# ⭐ Project Highlights
+
+✔ Interactive DSA Visualizer
+
+✔ Performance Analyzer Dashboard
+
+✔ Complexity Comparison Charts
+
+✔ Glassmorphism UI
+
+✔ Responsive Design
+
+✔ Built using React + TypeScript + Tailwind CSS
+
+---
+
+# 👩‍💻 Author
+
+**Ananya Satyapal**
+
+B.Tech ECE-AI, IGDTUW
+
+GitHub: https://github.com/YOUR_USERNAME
+
+LinkedIn: Add after deployment
+
+---
+
+## ⭐ If you like this project, consider giving it a star!
