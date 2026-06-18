@@ -11,7 +11,7 @@ function PerformancePanel({
   swaps,
   algorithm,
   timeTaken,
-  arraySize,
+  arraySize
 }: Props) {
 
   let complexity = "";
@@ -24,76 +24,47 @@ function PerformancePanel({
     complexity = "O(n²)";
   }
 
-  else if (
-    algorithm === "Merge Sort" ||
-    algorithm === "Quick Sort" ||
-    algorithm === "Heap Sort"
-  ) {
+  else {
     complexity = "O(n log n)";
   }
 
   return (
     <div className="grid md:grid-cols-5 gap-6 w-[90%] mx-auto mt-10">
 
-      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
+      {[
+        ["Comparisons", comparisons],
+        ["Swaps", swaps],
+        ["Complexity", complexity],
+        ["Time", `${timeTaken} ms`],
+        ["Array Size", arraySize]
+      ].map(([title, value], index) => (
 
-        <h2 className="text-cyan-400 font-semibold">
-          Comparisons
-        </h2>
+        <div
+          key={index}
+          className="
+          bg-white/10
+          backdrop-blur-lg
+          border border-white/10
+          rounded-2xl
+          p-6
+          text-center
+          shadow-xl
+          hover:scale-105
+          transition-all duration-300
+          "
+        >
 
-        <p className="text-3xl mt-3 font-bold">
-          {comparisons}
-        </p>
+          <h2 className="text-cyan-400 font-semibold">
+            {title}
+          </h2>
 
-      </div>
+          <p className="text-3xl mt-4 font-bold">
+            {value}
+          </p>
 
-      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
+        </div>
 
-        <h2 className="text-cyan-400 font-semibold">
-          Swaps
-        </h2>
-
-        <p className="text-3xl mt-3 font-bold">
-          {swaps}
-        </p>
-
-      </div>
-
-      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
-
-        <h2 className="text-cyan-400 font-semibold">
-          Complexity
-        </h2>
-
-        <p className="text-2xl mt-3 font-bold">
-          {complexity}
-        </p>
-
-      </div>
-
-      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
-
-        <h2 className="text-cyan-400 font-semibold">
-          Time
-        </h2>
-
-        <p className="text-3xl mt-3 font-bold">
-          {timeTaken} ms
-        </p>
-
-      </div>
-
-      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
-
-        <h2 className="text-cyan-400 font-semibold">
-          Array Size
-        </h2>
-
-        <p className="text-3xl mt-3 font-bold">
-          {arraySize}
-        </p>
-
-      </div>
+      ))}
 
     </div>
   );

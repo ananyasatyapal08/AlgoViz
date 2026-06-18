@@ -3,7 +3,6 @@ interface Props {
 }
 
 function AlgorithmInfo({ algorithm }: Props) {
-
   let info = {
     best: "",
     average: "",
@@ -11,11 +10,10 @@ function AlgorithmInfo({ algorithm }: Props) {
     space: "",
     stable: "",
     inplace: "",
-    adaptive: ""
+    adaptive: "",
   };
 
   switch (algorithm) {
-
     case "Bubble Sort":
       info = {
         best: "O(n)",
@@ -24,7 +22,7 @@ function AlgorithmInfo({ algorithm }: Props) {
         space: "O(1)",
         stable: "Yes",
         inplace: "Yes",
-        adaptive: "Yes"
+        adaptive: "Yes",
       };
       break;
 
@@ -36,7 +34,7 @@ function AlgorithmInfo({ algorithm }: Props) {
         space: "O(1)",
         stable: "No",
         inplace: "Yes",
-        adaptive: "No"
+        adaptive: "No",
       };
       break;
 
@@ -48,7 +46,7 @@ function AlgorithmInfo({ algorithm }: Props) {
         space: "O(1)",
         stable: "Yes",
         inplace: "Yes",
-        adaptive: "Yes"
+        adaptive: "Yes",
       };
       break;
 
@@ -60,7 +58,7 @@ function AlgorithmInfo({ algorithm }: Props) {
         space: "O(n)",
         stable: "Yes",
         inplace: "No",
-        adaptive: "No"
+        adaptive: "No",
       };
       break;
 
@@ -72,48 +70,54 @@ function AlgorithmInfo({ algorithm }: Props) {
         space: "O(log n)",
         stable: "No",
         inplace: "Yes",
-        adaptive: "No"
+        adaptive: "No",
       };
   }
 
   return (
-    <div className="w-[90%] mx-auto mt-10 bg-slate-800 rounded-2xl shadow-lg p-8">
+    <div className="w-[90%] mx-auto mt-10 bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8 shadow-2xl">
 
-      <h2 className="text-3xl text-center text-cyan-400 font-bold mb-8">
+      <h2 className="text-3xl font-bold text-cyan-400 text-center mb-8">
         {algorithm} Analysis
       </h2>
 
       <div className="grid md:grid-cols-3 gap-6">
 
-        <div className="bg-slate-700 rounded-xl p-6 text-center">
-          <h3 className="text-gray-300">Best Case</h3>
-          <p className="text-2xl font-bold mt-3">{info.best}</p>
-        </div>
+        {[
+          ["Best Case", info.best],
+          ["Average Case", info.average],
+          ["Worst Case", info.worst],
+          ["Space Complexity", info.space],
+          ["Stable", info.stable],
+          ["In Place", info.inplace],
+        ].map(([title, value], index) => (
 
-        <div className="bg-slate-700 rounded-xl p-6 text-center">
-          <h3 className="text-gray-300">Average Case</h3>
-          <p className="text-2xl font-bold mt-3">{info.average}</p>
-        </div>
+          <div
+            key={index}
+            className="
+            bg-white/10
+            backdrop-blur-lg
+            border border-white/10
+            rounded-2xl
+            p-6
+            text-center
+            shadow-xl
+            hover:scale-105
+            transition-all duration-300
+            "
+          >
 
-        <div className="bg-slate-700 rounded-xl p-6 text-center">
-          <h3 className="text-gray-300">Worst Case</h3>
-          <p className="text-2xl font-bold mt-3">{info.worst}</p>
-        </div>
+            <h3 className="text-gray-300">
+              {title}
+            </h3>
 
-        <div className="bg-slate-700 rounded-xl p-6 text-center">
-          <h3 className="text-gray-300">Space Complexity</h3>
-          <p className="text-2xl font-bold mt-3">{info.space}</p>
-        </div>
+            <p className="text-2xl font-bold mt-3">
+              {value}
+            </p>
 
-        <div className="bg-slate-700 rounded-xl p-6 text-center">
-          <h3 className="text-gray-300">Stable</h3>
-          <p className="text-2xl font-bold mt-3">{info.stable}</p>
-        </div>
+          </div>
 
-        <div className="bg-slate-700 rounded-xl p-6 text-center">
-          <h3 className="text-gray-300">In Place</h3>
-          <p className="text-2xl font-bold mt-3">{info.inplace}</p>
-        </div>
+        ))}
 
       </div>
 
