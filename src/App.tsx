@@ -34,6 +34,9 @@ function App() {
 
   const [compareMode, setCompareMode] = useState(false);
 
+  // NEW
+  const [darkMode, setDarkMode] = useState(true);
+
   function generateArray() {
     setSorted(false);
 
@@ -63,8 +66,8 @@ function App() {
   }, [size]);
 
   async function startSorting() {
-
     setSorted(false);
+
     setIsSorting(true);
 
     setComparisons(0);
@@ -73,7 +76,6 @@ function App() {
     const start = performance.now();
 
     if (algorithm === "Bubble Sort") {
-
       await bubbleSort(
         array,
         setArray,
@@ -82,11 +84,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Selection Sort") {
-
       await selectionSort(
         array,
         setArray,
@@ -95,11 +95,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Insertion Sort") {
-
       await insertionSort(
         array,
         setArray,
@@ -108,11 +106,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Merge Sort") {
-
       await mergeSort(
         array,
         setArray,
@@ -120,11 +116,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Quick Sort") {
-
       await quickSort(
         array,
         setArray,
@@ -133,7 +127,6 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     const end = performance.now();
@@ -148,9 +141,20 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white">
+    <div
+      className={`min-h-screen
+      ${
+        darkMode
+          ? "bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white"
+          : "bg-gradient-to-br from-slate-100 via-white to-slate-200 text-black"
+      }
+      `}
+    >
 
-      <Navbar />
+      <Navbar
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+      />
 
       <Controls
         generateArray={generateArray}
