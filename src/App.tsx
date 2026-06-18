@@ -7,6 +7,7 @@ import PerformancePanel from "./components/PerformancePanel";
 import { bubbleSort } from "./algorithms/bubbleSort";
 import { selectionSort } from "./algorithms/selectionSort";
 import { insertionSort } from "./algorithms/insertionSort";
+import { mergeSort } from "./algorithms/mergeSort";
 
 function App() {
   const [array, setArray] = useState<number[]>([]);
@@ -41,9 +42,7 @@ function App() {
 
   function resetVisualizer() {
     setComparisons(0);
-
     setSwaps(0);
-
     setTimeTaken(0);
 
     setSorted(false);
@@ -63,7 +62,6 @@ function App() {
     setIsSorting(true);
 
     setComparisons(0);
-
     setSwaps(0);
 
     const start = performance.now();
@@ -90,12 +88,22 @@ function App() {
       );
     }
 
-    else {
+    else if (algorithm === "Insertion Sort") {
       await insertionSort(
         array,
         setArray,
         setComparisons,
         setSwaps,
+        setActiveIndices,
+        speed
+      );
+    }
+
+    else if (algorithm === "Merge Sort") {
+      await mergeSort(
+        array,
+        setArray,
+        setComparisons,
         setActiveIndices,
         speed
       );

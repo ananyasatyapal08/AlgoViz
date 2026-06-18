@@ -35,7 +35,6 @@ function Controls({
   algorithm,
   setAlgorithm,
 }: Props) {
-
   return (
     <div className="bg-slate-800 w-[90%] mx-auto rounded-2xl shadow-lg p-8">
 
@@ -43,7 +42,6 @@ function Controls({
 
         {/* Algorithm */}
         <div>
-
           <p className="mb-2 text-gray-300">
             Algorithm
           </p>
@@ -57,6 +55,7 @@ function Controls({
             <option>Bubble Sort</option>
             <option>Selection Sort</option>
             <option>Insertion Sort</option>
+            <option>Merge Sort</option>
           </select>
 
         </div>
