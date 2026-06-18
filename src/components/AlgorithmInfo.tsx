@@ -85,34 +85,34 @@ function AlgorithmInfo({ algorithm }: Props) {
 
       <div className="grid md:grid-cols-3 gap-6">
 
-        <div className="bg-slate-700 p-6 rounded-xl text-center">
+        <div className="bg-slate-700 rounded-xl p-6 text-center">
           <h3 className="text-gray-300">Best Case</h3>
-          <p className="text-2xl font-bold mt-2">{info.best}</p>
+          <p className="text-2xl font-bold mt-3">{info.best}</p>
         </div>
 
-        <div className="bg-slate-700 p-6 rounded-xl text-center">
+        <div className="bg-slate-700 rounded-xl p-6 text-center">
           <h3 className="text-gray-300">Average Case</h3>
-          <p className="text-2xl font-bold mt-2">{info.average}</p>
+          <p className="text-2xl font-bold mt-3">{info.average}</p>
         </div>
 
-        <div className="bg-slate-700 p-6 rounded-xl text-center">
+        <div className="bg-slate-700 rounded-xl p-6 text-center">
           <h3 className="text-gray-300">Worst Case</h3>
-          <p className="text-2xl font-bold mt-2">{info.worst}</p>
+          <p className="text-2xl font-bold mt-3">{info.worst}</p>
         </div>
 
-        <div className="bg-slate-700 p-6 rounded-xl text-center">
+        <div className="bg-slate-700 rounded-xl p-6 text-center">
           <h3 className="text-gray-300">Space Complexity</h3>
-          <p className="text-2xl font-bold mt-2">{info.space}</p>
+          <p className="text-2xl font-bold mt-3">{info.space}</p>
         </div>
 
-        <div className="bg-slate-700 p-6 rounded-xl text-center">
+        <div className="bg-slate-700 rounded-xl p-6 text-center">
           <h3 className="text-gray-300">Stable</h3>
-          <p className="text-2xl font-bold mt-2">{info.stable}</p>
+          <p className="text-2xl font-bold mt-3">{info.stable}</p>
         </div>
 
-        <div className="bg-slate-700 p-6 rounded-xl text-center">
+        <div className="bg-slate-700 rounded-xl p-6 text-center">
           <h3 className="text-gray-300">In Place</h3>
-          <p className="text-2xl font-bold mt-2">{info.inplace}</p>
+          <p className="text-2xl font-bold mt-3">{info.inplace}</p>
         </div>
 
       </div>

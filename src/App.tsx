@@ -63,8 +63,8 @@ function App() {
   }, [size]);
 
   async function startSorting() {
-    setSorted(false);
 
+    setSorted(false);
     setIsSorting(true);
 
     setComparisons(0);
@@ -73,6 +73,7 @@ function App() {
     const start = performance.now();
 
     if (algorithm === "Bubble Sort") {
+
       await bubbleSort(
         array,
         setArray,
@@ -81,9 +82,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Selection Sort") {
+
       await selectionSort(
         array,
         setArray,
@@ -92,9 +95,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Insertion Sort") {
+
       await insertionSort(
         array,
         setArray,
@@ -103,9 +108,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Merge Sort") {
+
       await mergeSort(
         array,
         setArray,
@@ -113,9 +120,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Quick Sort") {
+
       await quickSort(
         array,
         setArray,
@@ -124,6 +133,7 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     const end = performance.now();
@@ -157,31 +167,38 @@ function App() {
         setCompareMode={setCompareMode}
       />
 
-      {compareMode ? (
-        <ComparisonPanel />
-      ) : (
-        <>
-          <ArrayBars
-            array={array}
-            activeIndices={activeIndices}
-            sorted={sorted}
-          />
+      {
+        compareMode ? (
 
-          <PerformancePanel
-            comparisons={comparisons}
-            swaps={swaps}
-            algorithm={algorithm}
-            timeTaken={timeTaken}
-            arraySize={size}
-          />
+          <ComparisonPanel />
 
-          <ComplexityChart />
+        ) : (
 
-          <AlgorithmInfo
-            algorithm={algorithm}
-          />
-        </>
-      )}
+          <>
+            <ArrayBars
+              array={array}
+              activeIndices={activeIndices}
+              sorted={sorted}
+            />
+
+            <PerformancePanel
+              comparisons={comparisons}
+              swaps={swaps}
+              algorithm={algorithm}
+              timeTaken={timeTaken}
+              arraySize={size}
+            />
+
+            <ComplexityChart />
+
+            <AlgorithmInfo
+              algorithm={algorithm}
+            />
+
+          </>
+
+        )
+      }
 
     </div>
   );
