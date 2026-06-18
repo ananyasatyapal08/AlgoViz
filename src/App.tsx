@@ -9,30 +9,27 @@ import { selectionSort } from "./algorithms/selectionSort";
 import { insertionSort } from "./algorithms/insertionSort";
 
 function App() {
-  // Array State
   const [array, setArray] = useState<number[]>([]);
-
-  // Array Size
   const [size, setSize] = useState(20);
 
-  // Performance Metrics
   const [comparisons, setComparisons] = useState(0);
   const [swaps, setSwaps] = useState(0);
 
-  // Animation Speed
   const [speed, setSpeed] = useState(100);
 
-  // Disable controls while sorting
   const [isSorting, setIsSorting] = useState(false);
 
-  // Highlight active bars
   const [activeIndices, setActiveIndices] = useState<number[]>([]);
 
-  // Selected algorithm
   const [algorithm, setAlgorithm] = useState("Bubble Sort");
 
-  // Generate random array
+  const [sorted, setSorted] = useState(false);
+
+  const [timeTaken, setTimeTaken] = useState(0);
+
   function generateArray() {
+    setSorted(false);
+
     const temp: number[] = [];
 
     for (let i = 0; i < size; i++) {
@@ -42,17 +39,19 @@ function App() {
     setArray(temp);
   }
 
-  // Generate array when size changes
   useEffect(() => {
     generateArray();
   }, [size]);
 
-  // Start Sorting
   async function startSorting() {
+    setSorted(false);
+
     setIsSorting(true);
 
     setComparisons(0);
     setSwaps(0);
+
+    const start = performance.now();
 
     if (algorithm === "Bubble Sort") {
       await bubbleSort(
@@ -76,7 +75,7 @@ function App() {
       );
     }
 
-    else if (algorithm === "Insertion Sort") {
+    else {
       await insertionSort(
         array,
         setArray,
@@ -87,12 +86,19 @@ function App() {
       );
     }
 
+    const end = performance.now();
+
+    setTimeTaken(Math.floor(end - start));
+
     setActiveIndices([]);
+
+    setSorted(true);
+
     setIsSorting(false);
   }
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 text-white">
 
       <Navbar />
 
@@ -111,11 +117,15 @@ function App() {
       <ArrayBars
         array={array}
         activeIndices={activeIndices}
+        sorted={sorted}
       />
 
       <PerformancePanel
         comparisons={comparisons}
         swaps={swaps}
+        algorithm={algorithm}
+        timeTaken={timeTaken}
+        arraySize={size}
       />
 
     </div>

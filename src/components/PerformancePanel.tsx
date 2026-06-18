@@ -1,60 +1,89 @@
-interface Props {
-  comparisons: number;
-  swaps: number;
+interface Props{
+  comparisons:number;
+  swaps:number;
+  algorithm:string;
+  timeTaken:number;
+  arraySize:number;
 }
 
 function PerformancePanel({
   comparisons,
   swaps,
-}: Props) {
-  return (
-    <div className="w-[90%] mx-auto mt-10">
+  algorithm,
+  timeTaken,
+  arraySize
+}:Props){
 
-      <div className="grid md:grid-cols-3 gap-6">
+  let complexity="O(n²)";
 
-        {/* Comparisons Card */}
-        <div className="bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
+  return(
 
-          <h2 className="text-cyan-400 text-xl font-semibold">
-            Comparisons
-          </h2>
+    <div className="grid md:grid-cols-5 gap-6 w-[90%] mx-auto mt-10">
 
-          <p className="text-4xl font-bold mt-4">
-            {comparisons}
-          </p>
+      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        </div>
+        <h2 className="text-cyan-400">
+          Comparisons
+        </h2>
 
-        {/* Swaps Card */}
-        <div className="bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
+        <p className="text-3xl mt-3 font-bold">
+          {comparisons}
+        </p>
 
-          <h2 className="text-cyan-400 text-xl font-semibold">
-            Swaps
-          </h2>
+      </div>
 
-          <p className="text-4xl font-bold mt-4">
-            {swaps}
-          </p>
+      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        </div>
+        <h2 className="text-cyan-400">
+          Swaps
+        </h2>
 
-        {/* Complexity Card */}
-        <div className="bg-slate-800 rounded-2xl p-6 shadow-lg text-center">
+        <p className="text-3xl mt-3 font-bold">
+          {swaps}
+        </p>
 
-          <h2 className="text-cyan-400 text-xl font-semibold">
-            Time Complexity
-          </h2>
+      </div>
 
-          <p className="text-3xl font-bold mt-4">
-            O(n²)
-          </p>
+      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        </div>
+        <h2 className="text-cyan-400">
+          Complexity
+        </h2>
+
+        <p className="text-2xl mt-3 font-bold">
+          {complexity}
+        </p>
+
+      </div>
+
+      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
+
+        <h2 className="text-cyan-400">
+          Time
+        </h2>
+
+        <p className="text-3xl mt-3 font-bold">
+          {timeTaken} ms
+        </p>
+
+      </div>
+
+      <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
+
+        <h2 className="text-cyan-400">
+          Array Size
+        </h2>
+
+        <p className="text-3xl mt-3 font-bold">
+          {arraySize}
+        </p>
 
       </div>
 
     </div>
-  );
+
+  )
+
 }
 
 export default PerformancePanel;
