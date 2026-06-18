@@ -8,6 +8,7 @@ import { bubbleSort } from "./algorithms/bubbleSort";
 import { selectionSort } from "./algorithms/selectionSort";
 import { insertionSort } from "./algorithms/insertionSort";
 import { mergeSort } from "./algorithms/mergeSort";
+import { quickSort } from "./algorithms/quickSort";
 
 function App() {
   const [array, setArray] = useState<number[]>([]);
@@ -57,6 +58,7 @@ function App() {
   }, [size]);
 
   async function startSorting() {
+
     setSorted(false);
 
     setIsSorting(true);
@@ -67,6 +69,7 @@ function App() {
     const start = performance.now();
 
     if (algorithm === "Bubble Sort") {
+
       await bubbleSort(
         array,
         setArray,
@@ -75,9 +78,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Selection Sort") {
+
       await selectionSort(
         array,
         setArray,
@@ -86,9 +91,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Insertion Sort") {
+
       await insertionSort(
         array,
         setArray,
@@ -97,9 +104,11 @@ function App() {
         setActiveIndices,
         speed
       );
+
     }
 
     else if (algorithm === "Merge Sort") {
+
       await mergeSort(
         array,
         setArray,
@@ -107,6 +116,20 @@ function App() {
         setActiveIndices,
         speed
       );
+
+    }
+
+    else if (algorithm === "Quick Sort") {
+
+      await quickSort(
+        array,
+        setArray,
+        setComparisons,
+        setSwaps,
+        setActiveIndices,
+        speed
+      );
+
     }
 
     const end = performance.now();
