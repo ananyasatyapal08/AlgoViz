@@ -9,17 +9,17 @@ import { selectionSort } from "./algorithms/selectionSort";
 import { insertionSort } from "./algorithms/insertionSort";
 
 function App() {
-  // Array state
+  // Array State
   const [array, setArray] = useState<number[]>([]);
 
-  // Array size
+  // Array Size
   const [size, setSize] = useState(20);
 
-  // Metrics
+  // Performance Metrics
   const [comparisons, setComparisons] = useState(0);
   const [swaps, setSwaps] = useState(0);
 
-  // Speed
+  // Animation Speed
   const [speed, setSpeed] = useState(100);
 
   // Disable controls while sorting
@@ -47,7 +47,7 @@ function App() {
     generateArray();
   }, [size]);
 
-  // Start sorting
+  // Start Sorting
   async function startSorting() {
     setIsSorting(true);
 
@@ -77,7 +77,14 @@ function App() {
     }
 
     else if (algorithm === "Insertion Sort") {
-      await insertionSort();
+      await insertionSort(
+        array,
+        setArray,
+        setComparisons,
+        setSwaps,
+        setActiveIndices,
+        speed
+      );
     }
 
     setActiveIndices([]);
