@@ -5,6 +5,9 @@ AlgoViz is an interactive web application built to make sorting algorithms easie
 Built with **React, TypeScript, Tailwind CSS, and Recharts**, the project combines algorithm visualization with a modern and responsive UI.
 
 ---
+## 🌐 Live Demo
+
+🔗 https://algo-viz-kappa-ten.vercel.app
 
 ## ✨ Features
 
