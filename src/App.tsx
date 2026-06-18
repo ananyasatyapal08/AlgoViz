@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Navbar from "./components/TempNavbar";
+import Navbar from "./components/Navbar";
 import Controls from "./components/Controls";
 import ArrayBars from "./components/ArrayBars";
 import PerformancePanel from "./components/PerformancePanel";
