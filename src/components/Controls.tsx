@@ -16,6 +16,9 @@ interface Props {
 
   algorithm: string;
   setAlgorithm: React.Dispatch<React.SetStateAction<string>>;
+
+  compareMode: boolean;
+  setCompareMode: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 function Controls({
@@ -34,6 +37,9 @@ function Controls({
 
   algorithm,
   setAlgorithm,
+
+  compareMode,
+  setCompareMode,
 }: Props) {
 
   return (
@@ -126,6 +132,19 @@ function Controls({
           disabled={isSorting}
         >
           Reset
+        </button>
+
+        {/* Compare Mode */}
+        <button
+          className="bg-purple-500 px-6 py-3 rounded-xl hover:bg-purple-600 disabled:bg-gray-600"
+          onClick={() => setCompareMode(!compareMode)}
+          disabled={isSorting}
+        >
+          {
+            compareMode
+              ? "Single Mode"
+              : "Compare Mode"
+          }
         </button>
 
       </div>

@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Controls from "./components/Controls";
 import ArrayBars from "./components/ArrayBars";
 import PerformancePanel from "./components/PerformancePanel";
+import ComparisonPanel from "./components/ComparisonPanel";
 
 import { bubbleSort } from "./algorithms/bubbleSort";
 import { selectionSort } from "./algorithms/selectionSort";
@@ -28,6 +29,8 @@ function App() {
   const [sorted, setSorted] = useState(false);
 
   const [timeTaken, setTimeTaken] = useState(0);
+
+  const [compareMode, setCompareMode] = useState(false);
 
   function generateArray() {
     setSorted(false);
@@ -58,7 +61,6 @@ function App() {
   }, [size]);
 
   async function startSorting() {
-
     setSorted(false);
 
     setIsSorting(true);
@@ -69,7 +71,6 @@ function App() {
     const start = performance.now();
 
     if (algorithm === "Bubble Sort") {
-
       await bubbleSort(
         array,
         setArray,
@@ -78,11 +79,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Selection Sort") {
-
       await selectionSort(
         array,
         setArray,
@@ -91,11 +90,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Insertion Sort") {
-
       await insertionSort(
         array,
         setArray,
@@ -104,11 +101,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Merge Sort") {
-
       await mergeSort(
         array,
         setArray,
@@ -116,11 +111,9 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     else if (algorithm === "Quick Sort") {
-
       await quickSort(
         array,
         setArray,
@@ -129,7 +122,6 @@ function App() {
         setActiveIndices,
         speed
       );
-
     }
 
     const end = performance.now();
@@ -159,21 +151,35 @@ function App() {
         isSorting={isSorting}
         algorithm={algorithm}
         setAlgorithm={setAlgorithm}
+        compareMode={compareMode}
+        setCompareMode={setCompareMode}
       />
 
-      <ArrayBars
-        array={array}
-        activeIndices={activeIndices}
-        sorted={sorted}
-      />
+      {
+        compareMode ? (
 
-      <PerformancePanel
-        comparisons={comparisons}
-        swaps={swaps}
-        algorithm={algorithm}
-        timeTaken={timeTaken}
-        arraySize={size}
-      />
+          <ComparisonPanel />
+
+        ) : (
+
+          <>
+            <ArrayBars
+              array={array}
+              activeIndices={activeIndices}
+              sorted={sorted}
+            />
+
+            <PerformancePanel
+              comparisons={comparisons}
+              swaps={swaps}
+              algorithm={algorithm}
+              timeTaken={timeTaken}
+              arraySize={size}
+            />
+          </>
+
+        )
+      }
 
     </div>
   );
