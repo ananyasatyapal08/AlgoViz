@@ -1,9 +1,9 @@
-interface Props{
-  comparisons:number;
-  swaps:number;
-  algorithm:string;
-  timeTaken:number;
-  arraySize:number;
+interface Props {
+  comparisons: number;
+  swaps: number;
+  algorithm: string;
+  timeTaken: number;
+  arraySize: number;
 }
 
 function PerformancePanel({
@@ -11,18 +11,33 @@ function PerformancePanel({
   swaps,
   algorithm,
   timeTaken,
-  arraySize
-}:Props){
+  arraySize,
+}: Props) {
 
-  let complexity="O(n²)";
+  let complexity = "";
 
-  return(
+  if (
+    algorithm === "Bubble Sort" ||
+    algorithm === "Selection Sort" ||
+    algorithm === "Insertion Sort"
+  ) {
+    complexity = "O(n²)";
+  }
 
+  else if (
+    algorithm === "Merge Sort" ||
+    algorithm === "Quick Sort" ||
+    algorithm === "Heap Sort"
+  ) {
+    complexity = "O(n log n)";
+  }
+
+  return (
     <div className="grid md:grid-cols-5 gap-6 w-[90%] mx-auto mt-10">
 
       <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        <h2 className="text-cyan-400">
+        <h2 className="text-cyan-400 font-semibold">
           Comparisons
         </h2>
 
@@ -34,7 +49,7 @@ function PerformancePanel({
 
       <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        <h2 className="text-cyan-400">
+        <h2 className="text-cyan-400 font-semibold">
           Swaps
         </h2>
 
@@ -46,7 +61,7 @@ function PerformancePanel({
 
       <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        <h2 className="text-cyan-400">
+        <h2 className="text-cyan-400 font-semibold">
           Complexity
         </h2>
 
@@ -58,7 +73,7 @@ function PerformancePanel({
 
       <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        <h2 className="text-cyan-400">
+        <h2 className="text-cyan-400 font-semibold">
           Time
         </h2>
 
@@ -70,7 +85,7 @@ function PerformancePanel({
 
       <div className="bg-slate-800 rounded-2xl p-6 text-center shadow-lg">
 
-        <h2 className="text-cyan-400">
+        <h2 className="text-cyan-400 font-semibold">
           Array Size
         </h2>
 
@@ -81,9 +96,7 @@ function PerformancePanel({
       </div>
 
     </div>
-
-  )
-
+  );
 }
 
 export default PerformancePanel;

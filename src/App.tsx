@@ -39,6 +39,20 @@ function App() {
     setArray(temp);
   }
 
+  function resetVisualizer() {
+    setComparisons(0);
+
+    setSwaps(0);
+
+    setTimeTaken(0);
+
+    setSorted(false);
+
+    setActiveIndices([]);
+
+    generateArray();
+  }
+
   useEffect(() => {
     generateArray();
   }, [size]);
@@ -49,6 +63,7 @@ function App() {
     setIsSorting(true);
 
     setComparisons(0);
+
     setSwaps(0);
 
     const start = performance.now();
@@ -104,6 +119,7 @@ function App() {
 
       <Controls
         generateArray={generateArray}
+        resetVisualizer={resetVisualizer}
         size={size}
         setSize={setSize}
         speed={speed}
