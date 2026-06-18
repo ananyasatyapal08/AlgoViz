@@ -7,6 +7,8 @@ import ComparisonPanel from "./components/ComparisonPanel";
 import ComplexityChart from "./components/ComplexityChart";
 import AlgorithmInfo from "./components/AlgorithmInfo";
 import SortingStatus from "./components/SortingStatus";
+import AboutSection from "./components/AboutSection";
+import Footer from "./components/Footer";
 
 import { bubbleSort } from "./algorithms/bubbleSort";
 import { selectionSort } from "./algorithms/selectionSort";
@@ -158,7 +160,6 @@ function App() {
           : "bg-gradient-to-br from-slate-100 via-white to-slate-200 text-black"
       }`}
     >
-
       <Navbar
         darkMode={darkMode}
         setDarkMode={setDarkMode}
@@ -179,45 +180,40 @@ function App() {
         setCompareMode={setCompareMode}
       />
 
-      {
-        compareMode ? (
+      {compareMode ? (
+        <ComparisonPanel />
+      ) : (
+        <>
+          <ArrayBars
+            array={array}
+            activeIndices={activeIndices}
+            sorted={sorted}
+          />
 
-          <ComparisonPanel />
+          <SortingStatus
+            sorted={sorted}
+            timeTaken={timeTaken}
+          />
 
-        ) : (
+          <PerformancePanel
+            comparisons={comparisons}
+            swaps={swaps}
+            algorithm={algorithm}
+            timeTaken={timeTaken}
+            arraySize={size}
+          />
 
-          <>
+          <ComplexityChart />
 
-            <ArrayBars
-              array={array}
-              activeIndices={activeIndices}
-              sorted={sorted}
-            />
+          <AlgorithmInfo
+            algorithm={algorithm}
+          />
 
-            <SortingStatus
-              sorted={sorted}
-              timeTaken={timeTaken}
-            />
+          <AboutSection />
 
-            <PerformancePanel
-              comparisons={comparisons}
-              swaps={swaps}
-              algorithm={algorithm}
-              timeTaken={timeTaken}
-              arraySize={size}
-            />
-
-            <ComplexityChart />
-
-            <AlgorithmInfo
-              algorithm={algorithm}
-            />
-
-          </>
-
-        )
-      }
-
+          <Footer />
+        </>
+      )}
     </div>
   );
 }
