@@ -5,6 +5,7 @@ import ArrayBars from "./components/ArrayBars";
 import PerformancePanel from "./components/PerformancePanel";
 import ComparisonPanel from "./components/ComparisonPanel";
 import ComplexityChart from "./components/ComplexityChart";
+import AlgorithmInfo from "./components/AlgorithmInfo";
 
 import { bubbleSort } from "./algorithms/bubbleSort";
 import { selectionSort } from "./algorithms/selectionSort";
@@ -156,34 +157,31 @@ function App() {
         setCompareMode={setCompareMode}
       />
 
-      {
-        compareMode ? (
+      {compareMode ? (
+        <ComparisonPanel />
+      ) : (
+        <>
+          <ArrayBars
+            array={array}
+            activeIndices={activeIndices}
+            sorted={sorted}
+          />
 
-          <ComparisonPanel />
+          <PerformancePanel
+            comparisons={comparisons}
+            swaps={swaps}
+            algorithm={algorithm}
+            timeTaken={timeTaken}
+            arraySize={size}
+          />
 
-        ) : (
+          <ComplexityChart />
 
-          <>
-            <ArrayBars
-              array={array}
-              activeIndices={activeIndices}
-              sorted={sorted}
-            />
-
-            <PerformancePanel
-              comparisons={comparisons}
-              swaps={swaps}
-              algorithm={algorithm}
-              timeTaken={timeTaken}
-              arraySize={size}
-            />
-
-            <ComplexityChart />
-
-          </>
-
-        )
-      }
+          <AlgorithmInfo
+            algorithm={algorithm}
+          />
+        </>
+      )}
 
     </div>
   );
